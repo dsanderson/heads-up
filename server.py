@@ -23,18 +23,18 @@ def home():
     </div>
   </body>
   <script type="text/javascript">
-    function fetch-pomodoro(text) {
+    function fetch_pomodoro(text) {
         document.getElementById("pomodoro-box").innerHTML = text;
     }
 
-    function fetch-flash(text) {
+    function fetch_flash(text) {
         document.getElementById("flash-box").innerHTML = text;
     }
 
     var pomodoroXmlHttp = new XMLHttpRequest();
     pomodoroXmlHttp.onreadystatechange = function() {
             if (pomodoroXmlHttp.readyState == 4 && pomodoroXmlHttp.status == 200)
-                fetch-pomodoro(pomodoroXmlHttp.responseText);
+                fetch_pomodoro(pomodoroXmlHttp.responseText);
     }
     pomodoroXmlHttp.open("GET", "./pomodoro", true);
     pomodoroXmlHttp.send(null);
@@ -42,7 +42,7 @@ def home():
     var flashXmlHttp = new XMLHttpRequest();
     flashXmlHttp.onreadystatechange = function() {
             if (flashXmlHttp.readyState == 4 && flashXmlHttp.status == 200)
-                write_page(flashXmlHttp.responseText);
+                fetch_flask(flashXmlHttp.responseText);
     }
     flashXmlHttp.open("GET", "./flash", true);
     flashXmlHttp.send(null);
