@@ -42,7 +42,7 @@ def home():
     var flashXmlHttp = new XMLHttpRequest();
     flashXmlHttp.onreadystatechange = function() {
             if (flashXmlHttp.readyState == 4 && flashXmlHttp.status == 200)
-                fetch_flask(flashXmlHttp.responseText);
+                fetch_flash(flashXmlHttp.responseText);
     }
     flashXmlHttp.open("GET", "./flash", true);
     flashXmlHttp.send(null);
