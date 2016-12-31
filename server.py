@@ -81,7 +81,7 @@ def pomodoro():
             seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
         };
     };
-    window.setInterval(pomodoro.run, 500);
+    var pomoTimer = window.setInterval(pomodoro.run, 500);
 </script>
 """
     return data
