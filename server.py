@@ -49,6 +49,7 @@ def home():
   </script>
 </html>
 """
+    return data
 
 @app.route("/pomodoro")
 def pomodoro():
