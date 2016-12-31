@@ -84,16 +84,16 @@ def pomodoro():
             secs_remaining = times[mode]-(Date()-start)/1000;
         };
         var mins = Math.floor(secs_remaining/60);
+        console.log(mins)
         var secs = secs_remaining-mins*60;
-        var mode = document.getElementById("mode");
+        var line = document.getElementById("mode");
         var minutes = document.getElementById("minutes");
         var seconds = document.getElementById("seconds");
-        mode.innerHTML = mode;
+        line.innerHTML = mode;
         minutes.innerHTML = (mins < 10 ? '0' : '') + mins;
         seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
     };
     var pomoTimer = window.setInterval(run, 500);
-    console.log(pomoTimer);
 </script>
 """
     return data
