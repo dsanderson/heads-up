@@ -85,9 +85,9 @@ def pomodoro():
         };
         var mins = Math.floor(secs_remaining/60);
         var secs = secs_remaining-mins*60;
-        var mode = getElementById("mode");
-        var minutes = getElementById("minutes");
-        var seconds = getElementById("seconds");
+        var mode = document.getElementById("mode");
+        var minutes = document.getElementById("minutes");
+        var seconds = document.getElementById("seconds");
         mode.innerHTML = mode;
         minutes.innerHTML = (mins < 10 ? '0' : '') + mins;
         seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
