@@ -77,7 +77,10 @@ def pomodoro():
     var times = {"work":1500,"rest":300};
     var start = Date();
     function run() {
+        console.log(times[mode]);
+        console.log(start);
         secs_remaining = times[mode]-(Date()-start)/1000;
+        console.log(secs_remaining);
         if (secs_remaining<=0) {
             start = Date();
             mode = (mode == "work" ? "rest" : "work");
