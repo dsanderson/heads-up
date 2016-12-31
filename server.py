@@ -75,16 +75,17 @@ def pomodoro():
 <script type="text/javascript">
     var mode = "work";
     var times = {"work":1500,"rest":300};
-    var start = Date().getTime();
+    var start = new Date();
     function run() {
         console.log(times[mode]);
         console.log(start);
-        secs_remaining = times[mode]-(Date().getTime()-start)/1000;
+        var now = new Date();
+        secs_remaining = times[mode]-(now.getTime()-start.getTime())/1000;
         console.log(secs_remaining);
         if (secs_remaining<=0) {
-            start = Date().getTime();
+            start = now;
             mode = (mode == "work" ? "rest" : "work");
-            secs_remaining = times[mode]-(Date().getTime()-start)/1000;
+            secs_remaining = times[mode]-(now.getTime()-start.getTime())/1000;
         };
         var mins = Math.floor(secs_remaining/60);
         console.log(mins)
