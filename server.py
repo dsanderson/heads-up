@@ -73,14 +73,14 @@ def pomodoro():
             };
             var mins = Math.floor(secs_remaining/60);
             var secs = secs_remaining-mins*60;
-            mode = getElementById("mode");
-            minutes = getElementById("minutes");
-            seconds = getElementById("seconds");
+            var mode = getElementById("mode");
+            var minutes = getElementById("minutes");
+            var seconds = getElementById("seconds");
             mode.innerHTML = mode;
             minutes.innerHTML = (mins < 10 ? '0' : '') + mins;
             seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
-        }
-    }
+        };
+    };
     window.setInterval(pomodoro.run, 500);
 </script>
 """
