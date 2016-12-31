@@ -74,22 +74,22 @@ def pomodoro():
 </div>
 <script type="text/javascript">
     var mode = "work";
-    var times = {"work":1500,"rest":300};
+    var times = {"work":10,"rest":5};
     var start = new Date();
     function run() {
-        console.log(times[mode]);
-        console.log(start);
+        //console.log(times[mode]);
+        //console.log(start);
         var now = new Date();
         secs_remaining = times[mode]-(now.getTime()-start.getTime())/1000;
-        console.log(secs_remaining);
+        //console.log(secs_remaining);
         if (secs_remaining<=0) {
             start = now;
             mode = (mode == "work" ? "rest" : "work");
             secs_remaining = times[mode]-(now.getTime()-start.getTime())/1000;
         };
         var mins = Math.floor(secs_remaining/60);
-        console.log(mins)
-        var secs = secs_remaining-mins*60;
+        //console.log(mins)
+        var secs = Math.floor(secs_remaining-mins*60);
         var line = document.getElementById("mode");
         var minutes = document.getElementById("minutes");
         var seconds = document.getElementById("seconds");
