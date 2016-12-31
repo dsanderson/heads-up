@@ -24,11 +24,24 @@ def home():
   </body>
   <script type="text/javascript">
     function fetch_pomodoro(text) {
-        document.getElementById("pomodoro-box").innerHTML = text;
+        // document.getElementById("pomodoro-box").innerHTML = text;
+        insertHtml("pomodoro-box",text);
     }
 
     function fetch_flash(text) {
-        document.getElementById("flash-box").innerHTML = text;
+        // document.getElementById("flash-box").innerHTML = text;
+        insertHtml("flash-box",text);
+    }
+
+    function insertHtml(id, html)
+    {
+       var ele = document.getElementById(id);
+       ele.innerHTML = html;
+       var codes = ele.getElementsByTagName("script");
+       for(var i=0;i<codes.length;i++)
+       {
+           eval(codes[i].text);
+       }
     }
 
     var pomodoroXmlHttp = new XMLHttpRequest();
@@ -80,6 +93,7 @@ def pomodoro():
         seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
     };
     var pomoTimer = window.setInterval(run, 500);
+    console.log(pomoTimer);
 </script>
 """
     return data
