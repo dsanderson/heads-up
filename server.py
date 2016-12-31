@@ -60,28 +60,26 @@ def pomodoro():
     <span id="minutes"></span>:<span id="seconds"></span>
 </div>
 <script type="text/javascript">
-    (function()  {
-        var mode = "work";
-        var times = {"work":1500,"rest":300};
-        var start = Date();
-        function run() {
+    var mode = "work";
+    var times = {"work":1500,"rest":300};
+    var start = Date();
+    function run() {
+        secs_remaining = times[mode]-(Date()-start)/1000;
+        if (secs_remaining<=0) {
+            start = Date();
+            mode = (mode == "work" ? "rest" : "work");
             secs_remaining = times[mode]-(Date()-start)/1000;
-            if (secs_remaining<=0) {
-                start = Date();
-                mode = (mode == "work" ? "rest" : "work");
-                secs_remaining = times[mode]-(Date()-start)/1000;
-            };
-            var mins = Math.floor(secs_remaining/60);
-            var secs = secs_remaining-mins*60;
-            var mode = getElementById("mode");
-            var minutes = getElementById("minutes");
-            var seconds = getElementById("seconds");
-            mode.innerHTML = mode;
-            minutes.innerHTML = (mins < 10 ? '0' : '') + mins;
-            seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
         };
-        var pomoTimer = window.setInterval(run, 500);
-    }());
+        var mins = Math.floor(secs_remaining/60);
+        var secs = secs_remaining-mins*60;
+        var mode = getElementById("mode");
+        var minutes = getElementById("minutes");
+        var seconds = getElementById("seconds");
+        mode.innerHTML = mode;
+        minutes.innerHTML = (mins < 10 ? '0' : '') + mins;
+        seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
+    };
+    var pomoTimer = window.setInterval(run, 500);
 </script>
 """
     return data
