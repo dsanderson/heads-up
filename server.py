@@ -60,7 +60,7 @@ def pomodoro():
     <span id="minutes"></span>:<span id="seconds"></span>
 </div>
 <script type="text/javascript">
-    var pomodoro = {
+    (function()  {
         var mode = "work";
         var times = {"work":1500,"rest":300};
         var start = Date();
@@ -80,8 +80,8 @@ def pomodoro():
             minutes.innerHTML = (mins < 10 ? '0' : '') + mins;
             seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
         };
-    };
     var pomoTimer = window.setInterval(pomodoro.run, 500);
+    }());
 </script>
 """
     return data
