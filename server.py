@@ -116,7 +116,7 @@ def flash():
 </div>
 <script type="text/javascript">
     var cards = """
-    data = data + "{}".format([['a','b']])#"{}".format(cards)
+    data = data + "{}".format(cards) #"{}".format([['a','b']])#
     data = data + """;
     function shuffle(a) {
         var j, x, i;
