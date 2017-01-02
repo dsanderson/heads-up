@@ -206,7 +206,7 @@ def flash():
      }
      else {
         elem = document.getElementById("flashcard-text");
-        elem.innerHTML = cards[i][1];
+        elem.innerHTML = cards[i][0]+'</br>'+cards[i][1];
         flash_state = 0;
         i=(i+1)%cards.length;
      }
