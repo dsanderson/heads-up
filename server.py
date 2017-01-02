@@ -34,6 +34,7 @@ def home():
 
     #box {
       width: 50%;
+      max-width: 50%;
       height: 100%;
       float: left;
       vertical-align: middle;
