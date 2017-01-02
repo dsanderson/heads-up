@@ -40,12 +40,12 @@ def home():
       text-align: center;
     }
 
-    .1-1 {
+    .left {
       top: 0;
       left: 0;
     }
 
-    .2-1 {
+    .right {
       top: 0;
       left: 50%;
     }
@@ -72,9 +72,9 @@ def home():
 
     </style>
     <div id="content">
-        <div class='box 1-1' id="pomodoro-box">
+        <div class="box left" id="pomodoro-box">
         </div>
-        <div class='box 2-1' id="flash-box">
+        <div class="box right" id="flash-box">
         </div>
     </div>
   <script type="text/javascript">
