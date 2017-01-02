@@ -32,11 +32,11 @@ def home():
       width: 100%;
     }
 
-    #box {
+    .box {
       width: 50%;
       max-width: 50%;
       height: 100%;
-      float: left;
+      float:left;
       vertical-align: middle;
       text-align: center;
     }
@@ -44,14 +44,12 @@ def home():
     #clock {
       width: 100%;
       height: 100%;
-      min-height: 100%;
       font-size: 10vw;
     }
 
     #flashcard {
       width: 100%;
       height: 100%;
-      min-height: 100%;
       background-color: rgb(44,47,50);
       vertical-align: middle;
       text-align: center;
