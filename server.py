@@ -16,10 +16,46 @@ def home():
   <head>
     <meta charset="utf-8">
     <title>headsup</title>
-    <link rel="stylesheet" href="css/index.css">
-    <script src="script.js"></script>
+    <!--<link rel="stylesheet" href="css/index.css">
+    <script src="script.js"></script>-->
   </head>
   <body>
+    <style>
+    #content {
+      color: #FFF;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: stretch;
+      align-content: stretch;
+    }
+
+    #box {
+      width: 100%;
+      height: 100%;
+      flex-grow: 1;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    #clock {
+      width: 100%;
+      height: 100%;
+      font-size: 10vw;
+    }
+
+    #flashcard {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(44,47,50);
+      vertical-align: middle;
+      text-align: center;
+      font-size: 5vw;
+    }
+    </style>
     <div id="content">
         <div class='box 1-1' id="pomodoro-box">
         </div>
