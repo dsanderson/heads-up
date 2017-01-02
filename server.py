@@ -144,8 +144,7 @@ def flash():
      }
     }
     var flashTimer = window.setInterval(update, 1500);
-</script>
-""".format(cards)
+</script>"""
     return data
 
 def get_cards(project_names=None):
