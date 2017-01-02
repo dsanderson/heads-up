@@ -45,16 +45,22 @@ def home():
       width: 100%;
       height: 100%;
       font-size: 10vw;
+      vertical-align: middle;
     }
 
     #flashcard {
       width: 100%;
       height: 100%;
       background-color: rgb(44,47,50);
-      vertical-align: middle;
       text-align: center;
       font-size: 5vw;
     }
+
+    #flashcard-text {
+      text-align: center;
+      vertical-align: middle;
+    }
+
     </style>
     <div id="content">
         <div class='box 1-1' id="pomodoro-box">
