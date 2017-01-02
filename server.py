@@ -3,6 +3,7 @@ from flask import jsonify
 import glob
 import codecs
 import random
+import json
 
 app = Flask(__name__)
 
@@ -117,7 +118,7 @@ def flash():
 <script type="text/javascript">
     var cards = """
     print "{}".format(cards)
-    data = data + "{}".format(cards) #"{}".format([['a','b']])#
+    data = data + json.dumps(cards) #"{}".format([['a','b']])#
     data = data + """;
     function shuffle(a) {
         var j, x, i;
