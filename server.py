@@ -64,7 +64,7 @@ def home():
       background-color: rgb(44,47,50);
       text-align: center;
       font-size: 5vw;
-      padding-top: 45%
+      padding-top: 30%
     }
 
     #flashcard-text {
