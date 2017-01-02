@@ -70,7 +70,7 @@ def home():
       vertical-align: middle;
     }
 
-    .span {
+    span {
       display: table-cell;
       vertical-align: middle;
     }
