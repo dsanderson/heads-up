@@ -171,3 +171,10 @@ def get_cards(project_names=None):
     data = [l.strip().split('|') for l in lines]
     #process the line
     return data
+
+@app.route("/css/index.css")
+def return_css:
+    f = open("css/index.css","r")
+    t = f.read()
+    f.close()
+    return t
