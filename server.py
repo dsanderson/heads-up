@@ -136,7 +136,7 @@ def pomodoro():
 </div>
 <script type="text/javascript">
     var mode = "work";
-    var times = {"work":10,"rest":5};//1500, 300
+    var times = {"work":1500,"rest":300};//1500, 300
     var start = new Date();
     function run() {
         //console.log(times[mode]);
@@ -211,7 +211,7 @@ def flash():
         i=(i+1)%cards.length;
      }
     }
-    var flashTimer = window.setInterval(update, 1500);
+    var flashTimer = window.setInterval(update, 10000);
 </script>"""
     return data
 
