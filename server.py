@@ -138,7 +138,7 @@ def flash():
      }
      else {
         flash_state = 0;
-        i=(i+1)%%cards.length;
+        i=(i+1)%cards.length;
         elem = getElementById("flashcard-text");
         elem.innerHTML = cards[i][1]
      }
