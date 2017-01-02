@@ -133,13 +133,13 @@ def flash():
     function update() {
      if (flash_state == 0) {
         flash_state = 1;
-        elem = getElementById("flashcard-text");
+        elem = document.getElementById("flashcard-text");
         elem.innerHTML = cards[i][0]
      }
      else {
         flash_state = 0;
         i=(i+1)%cards.length;
-        elem = getElementById("flashcard-text");
+        elem = document.getElementById("flashcard-text");
         elem.innerHTML = cards[i][1]
      }
     }
