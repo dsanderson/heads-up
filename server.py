@@ -134,13 +134,14 @@ def flash():
      if (flash_state == 0) {
         flash_state = 1;
         elem = document.getElementById("flashcard-text");
-        elem.innerHTML = cards[i][0]
+        console.log(cards)
+        elem.innerHTML = cards[i][0];
      }
      else {
         flash_state = 0;
         i=(i+1)%cards.length;
         elem = document.getElementById("flashcard-text");
-        elem.innerHTML = cards[i][1]
+        elem.innerHTML = cards[i][1];
      }
     }
     var flashTimer = window.setInterval(update, 1500);
