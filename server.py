@@ -30,24 +30,18 @@ def home():
       color: #FFF;
       height: 100%;
       width: 100%;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-around;
-      align-items: stretch;
-      align-content: stretch;
     }
 
     #box {
       width: 50%;
       height: 100%;
-      flex-grow: 1;
+      float: left;
       vertical-align: middle;
       text-align: center;
     }
 
     #clock {
-      width: 50%;
+      width: 100%;
       height: 100%;
       min-height: 100%;
       font-size: 10vw;
