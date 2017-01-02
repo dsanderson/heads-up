@@ -173,7 +173,7 @@ def get_cards(project_names=None):
     return data
 
 @app.route("/css/index.css")
-def return_css:
+def return_css():
     f = open("css/index.css","r")
     t = f.read()
     f.close()
