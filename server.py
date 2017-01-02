@@ -172,7 +172,7 @@ def flash():
     cards = get_cards()
     data = """
 <div id="flashcard">
-    <p id="flashcard-text"></p>
+    <span id="flashcard-text"></span>
 </div>
 <script type="text/javascript">
     var cards = """
