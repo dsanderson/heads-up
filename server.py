@@ -22,13 +22,13 @@ def home():
   <body>
     <style>
     html, body {
-      min-height:100%;
+      height:100%;
       margin:0;
     }
 
     #content {
       color: #FFF;
-      min-height: 100%;
+      height: 100%;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -39,21 +39,23 @@ def home():
     }
 
     #box {
-      width: 100%;
-      min-height: 100%;
+      width: 50%;
+      height: 100%;
       flex-grow: 1;
       vertical-align: middle;
       text-align: center;
     }
 
     #clock {
-      width: 100%;
+      width: 50%;
+      height: 100%;
       min-height: 100%;
       font-size: 10vw;
     }
 
     #flashcard {
       width: 100%;
+      height: 100%;
       min-height: 100%;
       background-color: rgb(44,47,50);
       vertical-align: middle;
