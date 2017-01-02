@@ -70,6 +70,11 @@ def home():
       vertical-align: middle;
     }
 
+    .span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
     </style>
     <div id="content">
         <div class="box left" id="pomodoro-box">
