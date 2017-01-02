@@ -1,4 +1,8 @@
 from flask import Flask
+from flask import jsonify
+import glob
+import codecs
+import random
 
 app = Flask(__name__)
 
@@ -74,7 +78,7 @@ def pomodoro():
 </div>
 <script type="text/javascript">
     var mode = "work";
-    var times = {"work":10,"rest":5};
+    var times = {"work":1500,"rest":300};
     var start = new Date();
     function run() {
         //console.log(times[mode]);
@@ -97,7 +101,7 @@ def pomodoro():
         minutes.innerHTML = (mins < 10 ? '0' : '') + mins;
         seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
     };
-    var pomoTimer = window.setInterval(run, 500);
+    var pomoTimer = window.setInterval(run, 100);
 </script>
 """
     return data
@@ -105,9 +109,53 @@ def pomodoro():
 @app.route("/flash")
 def flash():
     """returns a javascript/html stub that will fetch & run flashcards from the server"""
-    return ""
+    cards = get_cards()
+    data = """
+<div id="flashcard">
+    <p id="flashcard-text"></p>
+</div>
+<script type="text/javascript">
+    var cards = {};
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length; i; i--) {
+            j = Math.floor(Math.random() * i);
+            x = a[i - 1];
+            a[i - 1] = a[j];
+            a[j] = x;
+        }
+    }
+    shuffle(cards);
+    var i=0;
+    var flash_state=0;
+    function update() {
+     if (flash_state == 0) {
+        flash_state = 1;
+        elem = getElementById("flashcard-text");
+        elem.innerHTML = cards[i][0]
+     }
+     else {
+        flash_state = 0;
+        i=(i+1)%%cards.length;
+        elem = getElementById("flashcard-text");
+        elem.innerHTML = cards[i][1]
+     }
+    }
+    var flashTimer = window.setInterval(update, 1500);
+</script>
+""".format(cards)
+    return data
 
-@app.route("/get_flash")
-def get_flash():
-    """returns, in json format, the content of a flash card, including the timing"""
-    return ""
+def get_cards(project_names=None):
+    projects = glob.glob("flashcards/*.csv")
+    lines = []
+    for p in projects:
+        f = codecs.open(p, "r", "utf-8")
+        for l in f.readlines():
+            if (l.strip()[0] != '#') and (l.strip() != ''):
+                lines.append(l)
+        f.close()
+    #pick a line at random
+    data = [l.strip().split('|') for l in lines]
+    #process the line
+    return data
