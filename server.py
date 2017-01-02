@@ -115,7 +115,9 @@ def flash():
     <p id="flashcard-text"></p>
 </div>
 <script type="text/javascript">
-    var cards = {};
+    var cards = """
+    data = data + "{}".format(cards)
+    data = data + """;
     function shuffle(a) {
         var j, x, i;
         for (i = a.length; i; i--) {
