@@ -71,8 +71,7 @@ def home():
     }
 
     span {
-      display: table-cell;
-      vertical-align: middle;
+      padding-top: 45%;
     }
 
     </style>
