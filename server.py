@@ -117,7 +117,7 @@ def flash():
 </div>
 <script type="text/javascript">
     var cards = """
-    print "{}".format(cards)
+    #print "{}".format(cards)
     data = data + json.dumps(cards) #"{}".format([['a','b']])#
     data = data + """;
     function shuffle(a) {
@@ -136,7 +136,7 @@ def flash():
      if (flash_state == 0) {
         flash_state = 1;
         elem = document.getElementById("flashcard-text");
-        console.log(cards)
+        //console.log(cards)
         elem.innerHTML = cards[i][0];
      }
      else {
