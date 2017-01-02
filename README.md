@@ -9,3 +9,5 @@ To start, this system attempts to implement several ideas from [Barbara Oakley's
 ## How it works
 
 The system is built on top of python flask.  It serves a small local webpage that is divided into a grid via flexboxes.  The page loads additional content by setting the innerhtml of the flexboxes to stubs recieved from server endpoints.  This allows a moderate amount of decoupling between display and content.  To run, ""
+
+For the mandarin flashcards, requires a chinese font set like fonts-arphic-ukai or fonts-arphic-uming.

@@ -20,13 +20,12 @@ def home():
     <script src="script.js"></script>
   </head>
   <body>
-    <div class='box 1-1' id="pomodoro-box">
+    <div id="content">
+        <div class='box 1-1' id="pomodoro-box">
+        </div>
+        <div class='box 2-1' id="flash-box">
+        </div>
     </div>
-  </body>
-  <body>
-    <div class='box 2-1' id="flash-box">
-    </div>
-  </body>
   <script type="text/javascript">
     function fetch_pomodoro(text) {
         // document.getElementById("pomodoro-box").innerHTML = text;
@@ -65,6 +64,7 @@ def home():
     flashXmlHttp.open("GET", "./flash", true);
     flashXmlHttp.send(null);
   </script>
+  </body>
 </html>
 """
     return data
@@ -79,7 +79,7 @@ def pomodoro():
 </div>
 <script type="text/javascript">
     var mode = "work";
-    var times = {"work":1500,"rest":300};
+    var times = {"work":10,"rest":5};//1500, 300
     var start = new Date();
     function run() {
         //console.log(times[mode]);
@@ -101,6 +101,14 @@ def pomodoro():
         line.innerHTML = mode;
         minutes.innerHTML = (mins < 10 ? '0' : '') + mins;
         seconds.innerHTML = (secs < 10 ? '0' : '') + secs;
+        //switch color
+        var ele = document.getElementById("clock")
+        if (mode == 'work') {
+          ele.style.backgroundColor = "rgb(37,218,69)"
+        }
+        else {
+          ele.style.backgroundColor = "rgb(52,122,148)"
+        }
     };
     var pomoTimer = window.setInterval(run, 100);
 </script>
