@@ -36,9 +36,18 @@ def home():
       width: 50%;
       max-width: 50%;
       height: 100%;
-      float:left;
-      vertical-align: middle;
+      position: fixed;
       text-align: center;
+    }
+
+    .1-1 {
+      top: 0;
+      left: 0;
+    }
+
+    .1-2 {
+      top: 0;
+      left: 50%;
     }
 
     #clock {
