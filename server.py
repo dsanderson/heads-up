@@ -21,6 +21,11 @@ def home():
   </head>
   <body>
     <style>
+    html, body {
+      height:100%;
+      margin:0;
+    }
+
     #content {
       color: #FFF;
       height: 100%;
